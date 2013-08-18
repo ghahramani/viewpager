@@ -1,0 +1,18 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 2.3.3
+apiversion: 10
+description: Android ViewPager Module
+author: Navid Ghahramani
+license: Specify your license
+copyright: Copyright (c) 2013 by Your Company
+
+
+# these should not be edited
+name: tabs
+moduleid: com.navid.tabs
+guid: 27199270-cd6c-4a84-b4a2-7f47697110c4
+platform: android
+minsdk: 3.1.0.GA

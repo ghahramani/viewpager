@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ti:module xmlns:ti="http://ti.appcelerator.org">
+    <android xmlns:android="http://schemas.android.com/apk/res/android">
+        <manifest>
+            <uses-sdk android:minSdkVersion="10" android:targetSdkVersion="17" />
+            <application android:theme="@style/AppTheme">
+                <activity android:name="org.appcelerator.titanium.TiActivity" android:screenOrientation="portrait"
+                    android:configChanges="keyboardHidden|orientation">
+                    <intent-filter>
+                        <action android:name="android.intent.action.MAIN" />
+                        <category android:name="android.intent.category.LAUNCHER" />
+                    </intent-filter>
+                </activity>
+            </application>
+        </manifest>
+    </android>
+</ti:module>
