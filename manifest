@@ -3,7 +3,7 @@
 # during compilation, packaging, distribution, etc.
 #
 version: 2.3.3
-apiversion: 10
+apiversion: 2
 description: Android ViewPager Module
 author: Navid Ghahramani
 license: Specify your license
