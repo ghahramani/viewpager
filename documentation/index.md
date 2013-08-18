@@ -44,7 +44,7 @@ This module use https://github.com/astuetz/PagerSlidingTabStrip with some change
 Fork repository is here:
 https://github.com/dreamlearn/PagerSlidingTabStrip
 
-### tabs.createPagerTabs
+### module.createPagerTabs
 
 	var win = Ti.UI.createWindow();
 	win.open();
@@ -52,7 +52,7 @@ https://github.com/dreamlearn/PagerSlidingTabStrip
 	var tabs = tabs.createPagerTabs();
 	win.add(tabs);
 
-### tabs.property
+### module.property
 
 - tab ( Object)
     - color ( Text color )
@@ -188,6 +188,8 @@ text will be red and colorResource will be ignored
 Full Name: Navid Ghahramani
 
 Email: ghahramani.navid@gmail.com
+
+Please fill free to contact and share your idea with me ( Add new feature, fixing bug, get some help and etc... )
 
 ## License
 
