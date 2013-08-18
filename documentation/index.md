@@ -1,4 +1,8 @@
-# tabs Module
+# Google Play View Pager And Tabs Module
+
+##Copyright
+This module is base on the android module from [Astuetz](https://github.com/astuetz/PagerSlidingTabStrip) with some changes
+<br>Thanks astuetz for greate solution.
 
 ## Description
 
@@ -42,16 +46,11 @@ https://github.com/dreamlearn/PagerSlidingTabStrip
 
 ### tabs.createPagerTabs
 
-// open a single window
-`var win = Ti.UI.createWindow();`
-
-`win.open();`
-
-`var module = require('com.navid.tabs');`
-
-`var tabs = tabs.createPagerTabs();`
-
-`win.add(tabs)`
+	var win = Ti.UI.createWindow();
+	win.open();
+	var module = require('com.navid.tabs');
+	var tabs = tabs.createPagerTabs();
+	win.add(tabs);
 
 ### tabs.property
 
@@ -82,108 +81,107 @@ https://github.com/dreamlearn/PagerSlidingTabStrip
 - current ( set current tab in first time, if alignment set with ALIGNMENT_RIGHT detects itself and select tab from right to left, ex. the 1 index is first tab in right )
 
 The priority of color and color resource is with Color, if color not set use its resource if it set
-ex.
-{
-    color: "red",
-    colorResource: "holo_blue_light"
-}
+ex.<br>
+
+	{
+ 	   color: "red",
+  	  colorResource: "holo_blue_light"
+	}
 
 text will be red and colorResource will be ignored
 }
 ## Usage
 
+	var win = Ti.UI.createWindow();
+	win.open();
 
-// open a single window
-var win = Ti.UI.createWindow();
-win.open();
+	var tabs = require('com.navid.tabs');
 
-var tabs = require('com.navid.tabs');
+	var text = Ti.UI.createTableView({
+    	title: "NAVID",
+	    backgroundColor: "white",
+    	data: [
+        	{title: "1"},
+	        {title: "2"},
+    	    {title: "3"},
+        	{title: "4"},
+	        {title: "5"}
+    	]
+	});
 
-var text = Ti.UI.createTableView({
-    title: "NAVID",
-    backgroundColor: "white",
-    data: [
-        {title: "1"},
-        {title: "2"},
-        {title: "3"},
-        {title: "4"},
-        {title: "5"}
-    ]
-});
+	var text2 = Ti.UI.createTableView({
+    	title: "NAVID",
+	    backgroundColor: "white",
+	    data: [
+    	    {title: "1"},
+        	{title: "2"},
+	        {title: "3"},
+    	    {title: "4"},
+        	{title: "5"},
+	        {title: "6"}
+    	]
+	});
 
-var text2 = Ti.UI.createTableView({
-    title: "NAVID",
-    backgroundColor: "white",
-    data: [
-        {title: "1"},
-        {title: "2"},
-        {title: "3"},
-        {title: "4"},
-        {title: "5"},
-        {title: "6"}
-    ]
-});
+	var text3 = Ti.UI.createTableView({
+	    title: "NAVID",
+	    backgroundColor: "white",
+	    data: [
+	        {title: "1"},
+	        {title: "2"}
+	    ]
+	});
 
-var text3 = Ti.UI.createTableView({
-    title: "NAVID",
-    backgroundColor: "white",
-    data: [
-        {title: "1"},
-        {title: "2"}
-    ]
-});
-
-var tabs = tabs.createPagerTabs({
-    current: 4,
-    tab: {
-        indicatorResource: "holo_blue_light",
-        colorResource: "holo_blue_light",
-        backgroundColor: "white",
-        alignment: tabs.ALIGNMENT_RIGHT
-    },
-    views: [
-        {
-            title: "Test1",
-            view: text
-        },
-        {
-            title: "Test2",
-            view: text2
-        },
-        {
-            title: "Test3",
-            view: text3
-        }
-    ]
-});
-
-tabs.add("Dynamic Tab", Ti.UI.createLabel({text:"Label 1"}));
-tabs.add("Dynamic Tab 2", Ti.UI.createLabel({text:"Position 2"}), 2);
-tabs.remove(1);
-
-proxy.addEventListener(tabs.PAGE_SCROLLED_EVENT_NAME, function () {
-    Ti.API.info("TAG: ", arguments.length, JSON.stringify(arguments));
-});
-proxy.addEventListener(tabs.PAGE_SELECTED_EVENT_NAME, function () {
-    Ti.API.info("TAG: ", arguments.length, JSON.stringify(arguments));
-});
-proxy.addEventListener(tabs.PAGE_SCROLL_STATE_CHANGED_EVENT_NAME, function () {
-    Ti.API.info("TAG: ", arguments.length, JSON.stringify(arguments));
-});
-proxy.addEventListener(tabs.CLICK_EVENT_NAME, function () {
-    Ti.API.info("TAG: ", arguments.length, JSON.stringify(arguments));
-});
-proxy.addEventListener(tabs.LONG_CLICK_EVENT_NAME, function () {
-    Ti.API.info("TAG: ", arguments.length, JSON.stringify(arguments));
-});
-proxy.addEventListener(tabs.TOUCH_EVENT_NAME, function () {
-    Ti.API.info("TAG: ", arguments.length, JSON.stringify(arguments));
-});
-proxy.addEventListener(tabs.FOCUS_CHANGE_EVENT_NAME, function () {
-    Ti.API.info("TAG: ", arguments.length, JSON.stringify(arguments));
-});
-
-win.add(tabs);
+	var tabs = tabs.createPagerTabs({
+	    current: 4,
+	    tab: {
+	        indicatorResource: "holo_blue_light",
+	        colorResource: "holo_blue_light",
+	        backgroundColor: "white",
+	        alignment: tabs.ALIGNMENT_RIGHT
+	    },
+	    views: [
+	        {
+	            title: "Test1",
+	            view: text
+	        },
+	        {
+	            title: "Test2",
+	            view: text2
+	        },
+	        {
+	            title: "Test3",
+	            view: text3
+	        }
+	    ]
+	});
+	
+	tabs.add("Dynamic Tab", Ti.UI.createLabel({text:"Label 1"}));
+	tabs.add("Dynamic Tab 2", Ti.UI.createLabel({text:"Position 2"}), 2);
+	tabs.remove(1);
+	
+	proxy.addEventListener(tabs.PAGE_SCROLLED_EVENT_NAME, function () {
+	    Ti.API.info("TAG: ", arguments.length, JSON.stringify(arguments));
+	});
+	proxy.addEventListener(tabs.PAGE_SELECTED_EVENT_NAME, function () {
+	    Ti.API.info("TAG: ", arguments.length, JSON.stringify(arguments));
+	});
+	proxy.addEventListener(tabs.PAGE_SCROLL_STATE_CHANGED_EVENT_NAME, function () {
+	    Ti.API.info("TAG: ", arguments.length, JSON.stringify(arguments));
+	});
+	proxy.addEventListener(tabs.CLICK_EVENT_NAME, function () {
+	    Ti.API.info("TAG: ", arguments.length, JSON.stringify(arguments));
+	});
+	proxy.addEventListener(tabs.LONG_CLICK_EVENT_NAME, function () {
+	    Ti.API.info("TAG: ", arguments.length, JSON.stringify(arguments));
+	});
+	proxy.addEventListener(tabs.TOUCH_EVENT_NAME, function () {
+	    Ti.API.info("TAG: ", arguments.length, JSON.stringify(arguments));
+	});
+	proxy.addEventListener(tabs.FOCUS_CHANGE_EVENT_NAME, function () {
+	    Ti.API.info("TAG: ", arguments.length, JSON.stringify(arguments));
+	});
+	
+	win.add(tabs);
 
 ## Author
 
