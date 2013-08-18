@@ -17,8 +17,8 @@ This module is like Google Play tabs and ViewPager whit:
 - Set Tab height
 - supported android theme resource like Holo theme for all colors
 
-if you like the module please donate.
-<br>BitCoint Address: <br>1NLwq7hGahzHHnsAAD6P7kZ9RSKk4ReBCH<br>
+###if you like the module please donate.
+###<br>BitCoint Address: <br>1NLwq7hGahzHHnsAAD6P7kZ9RSKk4ReBCH<br>
 <img src="http://chart.googleapis.com/chart?cht=qr&chs=200x200&chl=1NLwq7hGahzHHnsAAD6P7kZ9RSKk4ReBCH"/>
 
 
