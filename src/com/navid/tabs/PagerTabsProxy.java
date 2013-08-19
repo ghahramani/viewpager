@@ -68,16 +68,12 @@ public class PagerTabsProxy extends TiViewProxy {
     }
 
     @Kroll.method
-    public boolean fireEvent(String eventName, @Kroll.argument(optional = true) KrollDict data, @Kroll.argument(optional = true) boolean children) {
+    public boolean childrenFireEvent(String eventName, @Kroll.argument(optional = true) KrollDict data) {
         if (mainView != null && mainView.getAdapter() != null) {
-            if (children) {
-                for (TiViewProxy viewProxy : mainView.getViewProxies()) {
-                    viewProxy.fireEvent(eventName, data, false);
-                }
-                return mainView.fireEvent(eventName, data, false);
-            } else {
-                return mainView.fireEvent(eventName, data, false);
+            for (TiViewProxy viewProxy : mainView.getViewProxies()) {
+                viewProxy.fireEvent(eventName, data, false);
             }
+            return true;
         }
         return false;
     }
