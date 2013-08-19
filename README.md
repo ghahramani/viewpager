@@ -156,8 +156,7 @@ text will be red and colorResource will be ignored
 	});
 	
 	tabs.add("Dynamic Tab", Ti.UI.createLabel({text:"Label 1"}));
-	tabs.add("Dynamic Tab 2", Ti.UI.createLabel({text:"Position 2"}), 2);
-	tabs.remove(1);
+	tabs.add("Dynamic Tab 2", Ti.UI.createLabel({text:"Position 2"}));
 	
 	proxy.addEventListener(tabs.PAGE_SCROLLED_EVENT_NAME, function () {
 	    Ti.API.info("TAG: ", arguments.length, JSON.stringify(arguments));
