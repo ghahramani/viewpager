@@ -19,6 +19,7 @@ import org.appcelerator.titanium.proxy.TiViewProxy;
 import org.appcelerator.titanium.util.TiUIHelper;
 import org.appcelerator.titanium.view.TiUIView;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -32,6 +33,7 @@ public class PagerTabsView extends TiUIView {
     private ViewPagerDynamicAdapter adapter;
     private ViewPager viewPager;
     private final PagerSlidingTabStrip tabStrip;
+    private final List<TiViewProxy> viewProxies;
 
     public PagerTabsView(final TiViewProxy pagerTabProxy, KrollDict properties) {
         this(pagerTabProxy);
@@ -40,6 +42,9 @@ public class PagerTabsView extends TiUIView {
 
     public PagerTabsView(final TiViewProxy pagerTabProxy) {
         super(pagerTabProxy);
+
+        viewProxies = new ArrayList<TiViewProxy>();
+
         LinearLayout layout = new LinearLayout(pagerTabProxy.getActivity());
         layout.setOrientation(LinearLayout.VERTICAL);
         setNativeView(layout);
@@ -285,6 +290,10 @@ public class PagerTabsView extends TiUIView {
         return tabStrip;
     }
 
+    public List<TiViewProxy> getViewProxies() {
+        return viewProxies;
+    }
+
     private boolean isTabRightAlignment() {
         return PagerTabsModule.ALIGNMENT_RIGHT == tabStrip.getTabAlignment();
     }
@@ -292,7 +301,9 @@ public class PagerTabsView extends TiUIView {
     private void addViewFromParameter(HashMap currentView) {
         if (currentView.get("view") instanceof TiViewProxy && !(currentView.get("view") instanceof TiBaseWindowProxy)) {
             String title = String.valueOf(currentView.get("title"));
-            View nativeView = ((TiViewProxy) currentView.get("view")).getOrCreateView().getNativeView();
+            TiViewProxy viewProxy = (TiViewProxy) currentView.get("view");
+            viewProxies.add(viewProxy);
+            View nativeView = viewProxy.getOrCreateView().getNativeView();
 
             if (isTabRightAlignment()) {
                 addView(title, nativeView, 0);

@@ -67,6 +67,21 @@ public class PagerTabsProxy extends TiViewProxy {
         return mainView.removeView(position);
     }
 
+    @Kroll.method
+    public boolean fireEvent(String eventName, @Kroll.argument(optional = true) KrollDict data, @Kroll.argument(optional = true) boolean children) {
+        if (mainView != null && mainView.getAdapter() != null) {
+            if (children) {
+                for (TiViewProxy viewProxy : mainView.getViewProxies()) {
+                    viewProxy.fireEvent(eventName, data, false);
+                }
+                return mainView.fireEvent(eventName, data, false);
+            } else {
+                return mainView.fireEvent(eventName, data, false);
+            }
+        }
+        return false;
+    }
+
     private void analyzeArgument(String prefix, Object arg) {
         if (arg == null) {
             Log.d(TAG, prefix + "NULL");
