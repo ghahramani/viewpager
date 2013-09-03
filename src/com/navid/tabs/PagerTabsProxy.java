@@ -77,39 +77,4 @@ public class PagerTabsProxy extends TiViewProxy {
         }
         return false;
     }
-
-    private void analyzeArgument(String prefix, Object arg) {
-        if (arg == null) {
-            Log.d(TAG, prefix + "NULL");
-        } else if (arg.getClass().isArray()) {
-            Object objArray[] = (Object[]) arg;
-            Log.d(TAG, prefix + "Array with " + objArray.length + " entries");
-            int index = 0;
-            for (Object obj : objArray) {
-                Log.d(TAG, prefix + "Index[" + index++ + "]");
-                analyzeArgument(prefix + ".", obj);
-            }
-        } else if (arg instanceof HashMap) {
-            HashMap kd = (HashMap) arg;
-            Log.d(TAG, prefix + "Dictionary with " + kd.size() + " entries");
-            for (Object key : kd.keySet().toArray()) {
-                Log.d(TAG, prefix + "Key[" + key.toString() + "]");
-                analyzeArgument(prefix + ".", kd.get(key));
-            }
-        } else if (arg instanceof String) {
-            Log.d(TAG, prefix + "String = " + (String) arg);
-        } else if (arg instanceof Number) {
-            Log.d(TAG, prefix + "Number = " + (Number) arg);
-        } else if (arg instanceof Date) {
-            DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
-            df.setTimeZone(TimeZone.getTimeZone("GMT"));
-            Log.d(TAG, prefix + "Date = " + df.format((Date) arg));
-        } else if (arg instanceof KrollFunction) {
-            Log.d(TAG, prefix + "Callback");
-        } else if (arg instanceof Boolean) {
-            Log.d(TAG, prefix + "Boolean = " + (Boolean) arg);
-        } else {
-            Log.d(TAG, prefix + "Unknown class " + arg.getClass().getSimpleName());
-        }
-    }
 }
