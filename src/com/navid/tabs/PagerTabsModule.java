@@ -37,21 +37,21 @@ public class PagerTabsModule extends KrollModule
     @Kroll.constant
     public static final int ALIGNMENT_LEFT = Gravity.LEFT;
 
-	// Standard Debugging variables
-	private static final String TAG = PagerTabsModule.class.getSimpleName();
+    // Standard Debugging variables
+    private static final String TAG = PagerTabsModule.class.getSimpleName();
 
-	// @Kroll.constant public static final String EXTERNAL_NAME = value;
-	
-	public PagerTabsModule()
-	{
-		super();
-	}
+    // @Kroll.constant public static final String EXTERNAL_NAME = value;
 
-	@Kroll.onAppCreate
-	public static void onAppCreate(TiApplication app)
-	{
-		Log.d(TAG, "inside onAppCreate");
-		// put module init code that needs to run when the application is created
-	}
+    public PagerTabsModule()
+    {
+        super();
+    }
+
+    @Kroll.onAppCreate
+    public static void onAppCreate(TiApplication app)
+    {
+        Log.d(TAG, "inside onAppCreate");
+        // put module init code that needs to run when the application is created
+    }
 }
 

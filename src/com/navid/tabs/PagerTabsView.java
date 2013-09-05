@@ -53,7 +53,7 @@ public class PagerTabsView extends TiUIView {
         FrameLayout.LayoutParams pagerSlidingTabStripLayoutParams = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 48, dm));
 
         tabStrip = new PagerSlidingTabStrip(pagerTabProxy.getActivity());
-        tabStrip.setTabBackground(Utilities.getResourceIdByName(pagerTabProxy.getActivity().getPackageName(), "drawable", "background_tab"));
+        tabStrip.setTabBackground(R.drawable.background_tab);
         layout.addView(tabStrip, pagerSlidingTabStripLayoutParams);
 
 
