@@ -237,12 +237,17 @@ public class PagerTabsView extends TiUIView {
             } else if (current > getCount()) {
                 current = getCount();
             }
-            if (isTabRightAlignment()) {
-                int newIndex = (getCount() - current);
-                viewPager.setCurrentItem(newIndex);
-            } else {
-                viewPager.setCurrentItem((current - 1));
-            }
+
+            select(current);
+        }
+    }
+
+    public void select(int index) {
+        if (isTabRightAlignment()) {
+            int newIndex = (getCount() - index);
+            viewPager.setCurrentItem(newIndex, true);
+        } else {
+            viewPager.setCurrentItem((index - 1), true);
         }
     }
 
