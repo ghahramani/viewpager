@@ -67,7 +67,7 @@ public class PagerTabsProxy extends TiViewProxy {
         return mainView.removeView(position);
     }
 
-    @Kroll.method
+    @Kroll.method(runOnUiThread = true)
     public void select(int index) {
         if (mainView == null || mainView.getViewPager() == null) {
             return;
