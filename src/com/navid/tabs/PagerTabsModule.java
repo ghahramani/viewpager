@@ -15,9 +15,8 @@ import org.appcelerator.kroll.annotations.Kroll;
 import org.appcelerator.titanium.TiApplication;
 import org.appcelerator.kroll.common.Log;
 
-@Kroll.module(name="Tabs", id="com.navid.tabs")
-public class PagerTabsModule extends KrollModule
-{
+@Kroll.module(name = "Tabs", id = "com.navid.tabs")
+public class PagerTabsModule extends KrollModule {
     @Kroll.constant
     public static final String PAGE_SCROLLED_EVENT_NAME = "pageScrolled";
     @Kroll.constant
@@ -42,14 +41,12 @@ public class PagerTabsModule extends KrollModule
 
     // @Kroll.constant public static final String EXTERNAL_NAME = value;
 
-    public PagerTabsModule()
-    {
+    public PagerTabsModule() {
         super();
     }
 
     @Kroll.onAppCreate
-    public static void onAppCreate(TiApplication app)
-    {
+    public static void onAppCreate(TiApplication app) {
         Log.d(TAG, "inside onAppCreate");
         // put module init code that needs to run when the application is created
     }

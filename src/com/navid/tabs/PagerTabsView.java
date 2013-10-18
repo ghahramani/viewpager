@@ -14,8 +14,8 @@ import android.widget.LinearLayout;
 import com.astuetz.viewpager.extensions.PagerSlidingTabStrip;
 import com.astuetz.viewpager.extensions.R;
 import org.appcelerator.kroll.KrollDict;
-import org.appcelerator.titanium.proxy.TiBaseWindowProxy;
 import org.appcelerator.titanium.proxy.TiViewProxy;
+import org.appcelerator.titanium.proxy.TiWindowProxy;
 import org.appcelerator.titanium.util.TiUIHelper;
 import org.appcelerator.titanium.view.TiUIView;
 
@@ -299,7 +299,7 @@ public class PagerTabsView extends TiUIView {
     }
 
     private void addViewFromParameter(HashMap currentView) {
-        if (currentView.get("view") instanceof TiViewProxy && !(currentView.get("view") instanceof TiBaseWindowProxy)) {
+        if (currentView.get("view") instanceof TiViewProxy && !(currentView.get("view") instanceof TiWindowProxy)) {
             String title = String.valueOf(currentView.get("title"));
             TiViewProxy viewProxy = (TiViewProxy) currentView.get("view");
             viewProxies.add(viewProxy);
