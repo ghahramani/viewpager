@@ -1,0 +1,18 @@
+%define lookup-function-name lookupGeneratedInit
+%define class-name TabsBindings
+%{
+
+#include <string.h>
+#include <v8.h>
+#include <KrollBindings.h>
+
+#include "com.navid.tabs.PagerTabsModule.h"
+#include "com.navid.tabs.PagerTabsProxy.h"
+
+
+%}
+struct titanium::bindings::BindEntry;
+%%
+com.navid.tabs.PagerTabsModule, ::com::navid::tabs::PagerTabsModule::bindProxy, ::com::navid::tabs::PagerTabsModule::dispose
+com.navid.tabs.PagerTabsProxy, ::com::navid::tabs::tabs::PagerTabsProxy::bindProxy, ::com::navid::tabs::tabs::PagerTabsProxy::dispose
+%%
