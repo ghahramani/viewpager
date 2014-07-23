@@ -158,26 +158,29 @@ text will be red and colorResource will be ignored
 	tabs.add("Dynamic Tab", Ti.UI.createLabel({text:"Label 1"}));
 	tabs.add("Dynamic Tab 2", Ti.UI.createLabel({text:"Position 2"}));
 	
-	proxy.addEventListener(tabs.PAGE_SCROLLED_EVENT_NAME, function () {
-	    Ti.API.info("TAG: ", arguments.length, JSON.stringify(arguments));
+	tabs.addEventListener('pageScrolled', function (evt) {
+	    console.log('Page Scrolled');
 	});
-	proxy.addEventListener(tabs.PAGE_SELECTED_EVENT_NAME, function () {
-	    Ti.API.info("TAG: ", arguments.length, JSON.stringify(arguments));
+
+	tabs.addEventListener('pageSelected', function (evt) {
+	    console.log('Page Selected');
 	});
-	proxy.addEventListener(tabs.PAGE_SCROLL_STATE_CHANGED_EVENT_NAME, function () {
-	    Ti.API.info("TAG: ", arguments.length, JSON.stringify(arguments));
+
+	tabs.addEventListener('pageScrollStateChanged', function (evt) {
+	    console.log('Page Scroll Changed');
 	});
-	proxy.addEventListener(tabs.CLICK_EVENT_NAME, function () {
-	    Ti.API.info("TAG: ", arguments.length, JSON.stringify(arguments));
+
+	tabs.addEventListener('click', function (evt) {
+	    console.log('Click');
 	});
-	proxy.addEventListener(tabs.LONG_CLICK_EVENT_NAME, function () {
-	    Ti.API.info("TAG: ", arguments.length, JSON.stringify(arguments));
+	tabs.addEventListener('longClick', function (evt) {
+	    console.log('Long click');
 	});
-	proxy.addEventListener(tabs.TOUCH_EVENT_NAME, function () {
-	    Ti.API.info("TAG: ", arguments.length, JSON.stringify(arguments));
+	tabs.addEventListener('touch', function (evt) {
+	    console.log('Touch');
 	});
-	proxy.addEventListener(tabs.FOCUS_CHANGE_EVENT_NAME, function () {
-	    Ti.API.info("TAG: ", arguments.length, JSON.stringify(arguments));
+	tabs.addEventListener('focusChange', function (evt) {
+	    console.log('Focus Change');
 	});
 	
 	win.add(tabs);
