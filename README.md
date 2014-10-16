@@ -49,7 +49,7 @@ https://github.com/dreamlearn/PagerSlidingTabStrip
 	var win = Ti.UI.createWindow();
 	win.open();
 	var module = require('com.navid.tabs');
-	var tabs = tabs.createPagerTabs();
+	var tabs = module.createPagerTabs();
 	win.add(tabs);
 
 ### module.property
