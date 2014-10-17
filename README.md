@@ -30,12 +30,14 @@ This module is like Google Play tabs and ViewPager whit:
 
 To access this module from JavaScript, you would do the following:
 
-	var module = require("com.navid.tabs");
+    var module = require("com.navid.tabs");
     var tabs = module.createPagerTabs();
 
 The module variable is a reference to the Module object.
+The tabs variable is a instance of viewpager.
 
-The tabs variable is a instance of viewpager
+### Alloy
+For Alloy there's a [widget to wrap this module](http://github.com/fokkezb/nl.fokkezb.viewpager).
 
 ## Reference
 
