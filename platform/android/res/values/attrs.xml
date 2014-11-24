@@ -7,12 +7,10 @@
         <attr name="dividerColor" format="color" />
         <attr name="indicatorHeight" format="dimension" />
         <attr name="underlineHeight" format="dimension" />
-        <attr name="dividerPadding" format="dimension" />
         <attr name="tabPaddingLeftRight" format="dimension" />
         <attr name="scrollOffset" format="dimension" />
         <attr name="tabBackground" format="reference" />
         <attr name="shouldExpand" format="boolean" />
-        <attr name="textAllCaps" format="boolean" />
     </declare-styleable>
 
 </resources>
