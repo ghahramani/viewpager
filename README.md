@@ -6,7 +6,7 @@ This module is base on the android module from [Astuetz](https://github.com/astu
 
 ## Description
 
-## Note: Unfortunately I have no time to support this plugin. Please fork me and help the others if you can. Thank you.
+# Note: Unfortunately I have no time to support this plugin. Please fork me and help to the others if you can. Thank you.
 
 This module is like Google Play tabs and ViewPager whit:
 
