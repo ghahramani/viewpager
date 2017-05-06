@@ -191,7 +191,7 @@ text will be red and colorResource will be ignored
 
 ## Author
 
-Full Name: Navid Ghahramani
+Full Name: Navid Ghahremani
 
 Email: ghahramani.navid@gmail.com
 
